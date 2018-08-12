@@ -1,0 +1,54 @@
+host 201
+    forwardAgent yes
+    user chang
+    port 22 
+    hostname 192.168.0.201
+
+host 32
+    forwardAgent yes
+    user chang
+    port 22 
+    hostname 192.168.0.32
+
+host jump1
+    user chang
+    port 22
+    hostname nycjump01.fwmrm.net
+
+host nporsche_0
+    user root
+    port 22
+    hostname 45.32.55.200
+
+host arch
+    user root
+    port 22
+    hostname 192.144.131.140
+    ForwardAgent yes
+
+host stgdev03
+    user chang
+    port 22
+    hostname stgdev03.stg.fwmrm.net
+
+host aws_aok_dev
+    user ec2-user
+    port 22
+    hostname 10.28.125.37
+    IdentityFile ~/.ssh/identify/aok/dev.pem
+    ProxyJump chang@stgdev03.stg.fwmrm.net
+
+host aws_aok_stg
+    user ec2-user
+    port 22
+    hostname 10.53.99.60
+    IdentityFile ~/.ssh/identify/aok/stg.pem
+    ProxyJump chang@stgdev03.stg.fwmrm.net
+    
+host aws_aok_prod
+    user ec2-user
+    port 22
+    hostname 10.204.52.173
+    IdentityFile ~/.ssh/identify/aok/prod.pem
+    ProxyJump chang@stgdev03.stg.fwmrm.net
+
